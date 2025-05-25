@@ -1,0 +1,67 @@
+-- ========================================
+-- STORED PROCEDURE: Insertar Alumno
+-- ========================================
+CREATE PROCEDURE SPI_ALUMNOS
+    @MATRICULA INT,
+    @NOMBRE VARCHAR(100),
+    @CARRERA VARCHAR(100),
+    @TELEFONO VARCHAR(20),
+    @CORREO VARCHAR(100)
+AS
+BEGIN
+    INSERT INTO ALUMNOS (MATRICULA, NOMBRE, CARRERA, TELEFONO, CORREO)
+    VALUES (@MATRICULA, UPPER(@NOMBRE), UPPER(@CARRERA), @TELEFONO, LOWER(@CORREO))
+END
+
+-- ========================================
+-- STORED PROCEDURE: Actualizar Alumno
+-- ========================================
+CREATE PROCEDURE SPU_ALUMNOS
+    @MATRICULA INT,
+    @NOMBRE VARCHAR(100),
+    @CARRERA VARCHAR(100),
+    @TELEFONO VARCHAR(20),
+    @CORREO VARCHAR(100)
+AS
+BEGIN
+    UPDATE ALUMNOS
+    SET NOMBRE = UPPER(@NOMBRE),
+        CARRERA = UPPER(@CARRERA),
+        TELEFONO = @TELEFONO,
+        CORREO = LOWER(@CORREO)
+    WHERE MATRICULA = @MATRICULA
+END
+
+-- ========================================
+-- STORED PROCEDURE: Eliminar Alumno
+-- ========================================
+CREATE PROCEDURE SPD_ALUMNOS
+    @MATRICULA INT
+AS
+BEGIN
+    DELETE FROM ALUMNOS WHERE MATRICULA = @MATRICULA
+END
+
+-- ========================================
+-- STORED PROCEDURE: Seleccionar Alumnos
+-- ========================================
+CREATE PROCEDURE SPS_ALUMNOS
+AS
+BEGIN
+    SELECT MATRICULA, NOMBRE, CARRERA, TELEFONO, CORREO FROM ALUMNOS
+END
+
+-- ========================================
+-- STORED PROCEDURE: Insertar Préstamo
+-- ========================================
+CREATE PROCEDURE SPI_PRESTAMOS
+    @MATRICULA INT,
+    @IDLIBRO INT,
+    @FECHAPRESTAMO DATE,
+    @FECHADEVOLUCION DATE,
+    @ESTADO VARCHAR(20)
+AS
+BEGIN
+    INSERT INTO PRESTAMOS (MATRICULA, IDLIBRO, FECHAPRESTAMO, FECHADEVOLUCION, ESTADO)
+    VALUES (@MATRICULA, @IDLIBRO, @FECHAPRESTAMO, @FECHADEVOLUCION, @ESTADO)
+END
