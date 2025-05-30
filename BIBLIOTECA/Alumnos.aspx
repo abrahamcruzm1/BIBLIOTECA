@@ -7,7 +7,7 @@
         <br />
     </p>
     <asp:Panel ID="Panel1" runat="server" Height="308px">
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="MATRICULA" DataSourceID="SqlDataSource1" PageSize="6" Width="956px" AllowCustomPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="MATRICULA" DataSourceID="SqlDataSource1" PageSize="8" Width="956px" AllowCustomPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="MATRICULA" HeaderText="MATRICULA" ReadOnly="True" SortExpression="MATRICULA" />

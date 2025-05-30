@@ -149,6 +149,7 @@
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
     <Content Include="Libros.aspx" />
+    <Content Include="Portada.aspx" />
     <Content Include="Prestamos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -275,6 +276,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Portada.aspx.designer.vb">
+      <DependentUpon>Portada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portada.aspx.vb">
+      <DependentUpon>Portada.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Prestamos.aspx.designer.vb">
       <DependentUpon>Prestamos.aspx</DependentUpon>
